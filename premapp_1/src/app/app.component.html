@@ -1,0 +1,31 @@
+<p>{{title}}</p>
+<p>{{direBonjour()}}</p>
+<ul>
+  <li>{{tab[0]}}</li>
+  <li>{{tab[1]}}</li>
+  <li>{{tab[2]}}</li>
+  <li>{{tab[3]}}</li>
+</ul>
+<ul>
+  <li *ngFor="let item of tab">
+    {{item}}
+  </li>
+</ul>
+<ul>
+  <li *ngFor="let item of tab;let i = index">
+    {{i}} : {{item}}
+  </li>
+</ul>
+<ul>
+  <li *ngIf="tab[0] %2 != 0;else sinon">
+    {{tab[0]}} est impaire
+  </li>
+  <ng-template #sinon>
+    <li>
+      {{tab[0]}} est paire
+    </li>
+  </ng-template>
+</ul>
+
+<app-menu></app-menu>
+<router-outlet></router-outlet>
